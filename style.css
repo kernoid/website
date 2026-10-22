@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: AGPL-3.0-or-later */
-/* Kernoid – one page. Terminal look with one fault in it: near-black, glitch white, mint as the one accent,
+/* kernoid – one page. Terminal look with one fault in it: near-black, glitch white, mint as the one accent,
    straight edges. Colours from kernoid/brand/README.md; fonts self-hosted, nothing loaded from elsewhere. */
 @font-face { font-family: "Plex Mono"; src: url("assets/fonts/IBMPlexMono-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Plex Mono"; src: url("assets/fonts/IBMPlexMono-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }

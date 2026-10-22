@@ -1,6 +1,6 @@
-# Kernoid – website
+# kernoid – website
 
-One static page for **Kernoid**: no build step, no framework, no external resources, no cookies, no tracking.
+One static page for **kernoid**: no build step, no framework, no external resources, no cookies, no tracking.
 A [falkOSS](https://falkoss.org) project.
 
 | Path | What |
