@@ -59,6 +59,7 @@ nav a:hover { color: var(--white); text-decoration: none; }
 .hero .wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: center; }
 .prompt { font: 15px var(--mono); color: var(--reed); margin: 0 0 18px; }
 .prompt b { color: var(--steel); font-weight: 400; }
+.hero .status { font: 14px var(--mono); color: var(--mint); margin: 0 0 14px; }
 .hero h1 { font: 700 clamp(32px, 5vw, 52px)/1.12 var(--mono); margin: 0 0 22px; letter-spacing: -0.02em; }
 .hero h1 .mint::after {
   content: ""; display: inline-block; width: 0.5em; height: 0.9em; margin-left: 0.12em; vertical-align: -0.08em;
