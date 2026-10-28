@@ -42,7 +42,7 @@
           <p><strong>kernoid</strong> is one self-hostable system for an organisation's core: an account is created
             once and is at the same time the mailbox, the login for single sign-on and the owner of files. Free
             software in Rust – everything included.</p>
-          <p class="status">0.1.0 – the alpha, to try out and test</p>
+          <p class="status">0.1.0 – a pre-release, to try out and test</p>
           <div class="buttons">
             <a class="button primary" href="https://kernoid.dev/getting-started/">./get-started</a>
             <a class="button" href="https://kernoid.dev">./docs</a>
@@ -82,13 +82,14 @@
     <section id="roadmap">
       <div class="wrap">
         <h2>roadmap</h2>
-        <p>The alpha is here: <a href="https://kernoid.dev/getting-started/">install it</a> and tell us what you find. It is for testing – there has been no external security audit yet. The order of what follows is fixed, the windows are rough.</p>
+        <p>kernoid is in its pre-release phase: <a href="https://kernoid.dev/getting-started/">install it</a> and tell us what you find – there has been no external security audit yet. The aim is a first stable release in summer 2027, ready for production and running falkOSS's own email, logins and files.</p>
         <ol class="steps">
-          <li class="now"><span class="name">alpha</span><span class="when">now · 0.1.0</span><span class="what">identity and single sign-on – OpenID Connect, SAML, SCIM, passkeys; mail – SMTP, IMAP, JMAP; calendars and contacts; files with WebDAV and team folders; the web app and a terminal app</span></li>
-          <li><span class="name">beta</span><span class="when">+9–12 months</span><span class="what">public links and resumable uploads, LDAP, a Kubernetes operator – and what testing the alpha turns up</span></li>
-          <li><span class="name">1.0</span><span class="when">+6–12 months</span><span class="what">modules for video calls, office editing and virus scanning, hooks for other systems, help with moving in, an external security audit – ready for production</span></li>
+          <li class="now"><span class="name">0.1</span><span class="when">now</span><span class="what">identity and single sign-on – OpenID Connect, SAML, SCIM, passkeys; mail – SMTP, IMAP, JMAP; calendars and contacts; files with WebDAV and team folders; the web app and a terminal app</span></li>
+          <li><span class="name">0.2</span><span class="when">next</span><span class="what">public links and resumable uploads, LDAP, a Kubernetes operator, the core completed – and the first modules: virus scanning and video calls (Jitsi)</span></li>
+          <li><span class="name">0.x</span><span class="when">until stable</span><span class="what">office editing (WOPI), external key management, DNS automation, help with moving in, hooks for other systems, an external security audit</span></li>
+          <li><span class="name">1.0</span><span class="when">summer 2027</span><span class="what">stable – ready for production; desktop and mobile apps follow after it</span></li>
         </ol>
-        <p class="note">Beta and 1.0 count from the start of funded development, with two to three full-time developers. Details in the <a href="https://github.com/kernoid/whitepaper">whitepaper</a> and the <a href="https://github.com/kernoid/kernoid/blob/main/CHANGELOG.md">changelog</a>.</p>
+        <p class="note">The web app and the terminal app are kernoid's own apps until then; mail programs, calendars and file managers connect over the open protocols. Details in the <a href="https://github.com/kernoid/kernoid/blob/main/CHANGELOG.md">changelog</a> and the <a href="https://github.com/kernoid/whitepaper">whitepaper</a>.</p>
       </div>
     </section>
 
@@ -97,7 +98,7 @@
         <h2>get involved</h2>
         <div class="grid">
           <div class="cell"><h3>developers</h3><p>Rust, identity and mail protocols, distributed systems, apps, operation. Contributions under the <a href="https://developercertificate.org">DCO</a>.</p></div>
-          <div class="cell"><h3>organisations</h3><p>Test the alpha and the beta, fund the development, or run kernoid for your customers.</p></div>
+          <div class="cell"><h3>organisations</h3><p>Test the pre-releases, fund the development, or run kernoid for your customers.</p></div>
           <div class="cell"><h3>the whitepaper</h3><p>Questions and corrections are welcome as issues or pull requests in <a href="https://github.com/kernoid/whitepaper">kernoid/whitepaper</a>.</p></div>
           <div class="cell"><h3>contact</h3><p>Write to <a href="mailto:support@falkoss.org">support@falkoss.org</a> – kernoid is published by <a href="https://falkoss.org">falkOSS</a>.</p></div>
         </div>
