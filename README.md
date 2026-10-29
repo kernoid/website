@@ -29,4 +29,7 @@ Source: **GitHub Actions**.
 ## Licence
 
 The site's code is **AGPL-3.0-or-later** (`LICENSE`); the fonts are under the SIL Open Font License 1.1
-(`assets/fonts/OFL.txt`); the brand (name, logo, marks) is not covered by either.
+(`assets/fonts/OFL.txt`); the favicon, icons, `social.png`, `site.webmanifest` and the marks in `assets/` are copies
+from [kernoid/brand](https://github.com/kernoid/brand) under CC BY-ND 4.0 – updated by copying from there, never
+edited here. Every file's licence is in `REUSE.toml` ([REUSE](https://reuse.software), checked in CI). The name and
+the brand are not covered by any of these licences.
