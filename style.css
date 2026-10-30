@@ -96,6 +96,12 @@ section > .wrap > p { color: var(--reed); max-width: 46em; margin: 0 0 24px; }
 .steps .now .name { color: var(--mint); }
 .note { color: var(--reed); font-size: 14px; margin: 14px 0 0; }
 
+/* name */
+pre.story { font: clamp(15px, 2.4vw, 22px)/1.7 var(--mono); margin: 0 0 18px; color: var(--reed); white-space: pre-wrap; }
+pre.story b { color: var(--mint); font-weight: 700; }
+pre.story i { color: var(--white); font-style: normal; }
+.small { color: var(--reed); font-size: 15px; margin: 0; max-width: 46em; }
+
 /* footer */
 footer { border-top: 1px solid var(--line); padding: 26px 0 44px; color: var(--reed); font: 13px var(--mono); background: rgba(11, 13, 16, 0.9); }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }

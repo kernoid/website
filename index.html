@@ -28,6 +28,7 @@
         <a href="#what">what</a>
         <a href="#how">how</a>
         <a href="#roadmap">roadmap</a>
+        <a href="#name">name</a>
         <a href="#involved">get involved</a>
       </nav>
     </div>
@@ -71,7 +72,7 @@
       <div class="wrap">
         <h2>how it is built</h2>
         <div class="grid">
-          <div class="cell"><h3>open standards</h3><p>SMTP, IMAP, JMAP, CalDAV, CardDAV, WebDAV; OpenID Connect, OAuth 2.0, SAML 2.0, SCIM 2.0 – LDAP to come. The same protocols take your data out again.</p></div>
+          <div class="cell"><h3>open standards</h3><p>SMTP, IMAP, JMAP, CalDAV, CardDAV, WebDAV; OpenID Connect, OAuth 2.0, SAML 2.0, SCIM 2.0 – LDAP with 0.2. The same protocols take your data out again.</p></div>
           <div class="cell"><h3>on proven work</h3><p>kernoid takes over AGPL code from <a href="https://github.com/stalwartlabs/stalwart">Stalwart</a> and carries the concepts of <a href="https://github.com/zitadel/zitadel">Zitadel</a> over to Rust – credited in every file.</p></div>
           <div class="cell"><h3>modules, not bloat</h3><p>Connections to other services – video, office editing and more – are modules: off by default, switched on where they are needed.</p></div>
           <div class="cell"><h3>apps under MIT</h3><p>The server is AGPL-3.0; first-party apps are MIT and speak an open protocol. Anyone can write their own.</p></div>
@@ -84,12 +85,24 @@
         <h2>roadmap</h2>
         <p>kernoid is in its pre-release phase: <a href="https://kernoid.dev/getting-started/">install it</a> and tell us what you find – there has been no external security audit yet. The aim is a first stable release ready for production and running falkOSS's own email, logins and files – together with the app for desktop and mobile, once falkOSS is incorporated and holds the app stores' developer accounts.</p>
         <ol class="steps">
-          <li class="now"><span class="name">0.1</span><span class="when">now</span><span class="what">identity and single sign-on – OpenID Connect, SAML, SCIM, passkeys; mail – SMTP, IMAP, JMAP; calendars and contacts; files with WebDAV and team folders; the web app and a terminal app</span></li>
-          <li><span class="name">0.2</span><span class="when">next</span><span class="what">public links and resumable uploads, LDAP, a Kubernetes operator, end-to-end encryption, the core completed – and the first modules: virus scanning and video calls (Jitsi)</span></li>
+          <li><span class="name">0.1</span><span class="when">released</span><span class="what">identity and single sign-on – OpenID Connect, SAML, SCIM, passkeys; mail – SMTP, IMAP, JMAP; calendars and contacts; files with WebDAV and team folders; the web app and a terminal app</span></li>
+          <li class="now"><span class="name">0.2</span><span class="when">in the works</span><span class="what">public links and drop boxes, uploads in pieces, LDAP, a Kubernetes operator with a Helm chart, end-to-end encryption, the core completed – and the first modules: virus scanning and video calls (Jitsi); most of it is in the repository already</span></li>
           <li><span class="name">0.x</span><span class="when">until stable</span><span class="what">office editing (WOPI), external key management, DNS automation, help with moving in, hooks for other systems, an external security audit</span></li>
           <li><span class="name">1.0</span><span class="when">with falkOSS incorporated</span><span class="what">stable – ready for production, with the app for desktop and mobile (macOS, iOS, Linux, Android, Windows)</span></li>
         </ol>
         <p class="note">The web app and the terminal app are kernoid's own apps until then, and the app for desktop and mobile is built alongside; mail programs, calendars and file managers connect over the open protocols. Details in the <a href="https://github.com/kernoid/kernoid/blob/main/CHANGELOG.md">changelog</a> and the <a href="https://github.com/kernoid/whitepaper">whitepaper</a>.</p>
+      </div>
+    </section>
+
+    <section id="name">
+      <div class="wrap">
+        <h2>name</h2>
+<pre class="story"><b>Kern</b>    German      → <i>core</i>
+<b>kerno</b>   Esperanto   → <i>core</i>
+<b>kerno</b> + <b>id</b>          → <i>kernoid</i>
+kern<b>0</b>id, 0 as o     → <i>kerno.id</i>
+kern<b>0</b>id, without 0  → <i>kern.id</i></pre>
+        <p class="small">The core, with identity – both readings are in the wordmark, the dot in the 0 is the dot of the domain. As an aside, a nod to mathematics: the kernel of a map, and <em>-oid</em> as in monoid – kernel and monoid make kernoid.</p>
       </div>
     </section>
 
