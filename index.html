@@ -27,6 +27,7 @@
       <nav>
         <a href="#what">what</a>
         <a href="#how">how</a>
+        <a href="#apps">apps</a>
         <a href="#roadmap">roadmap</a>
         <a href="#name">name</a>
         <a href="#involved">get involved</a>
@@ -43,7 +44,7 @@
           <p><strong>kernoid</strong> is one self-hostable system for an organisation's core: an account is created
             once and can be at the same time the mailbox, the login for single sign-on and the owner of files. Free
             software in Rust – everything included.</p>
-          <p class="status">0.1.0 – a pre-release, to try out and test</p>
+          <p class="status">0.2.0 – a pre-release, to try out and test</p>
           <div class="buttons">
             <a class="button primary" href="https://kernoid.dev/getting-started/">./get-started</a>
             <a class="button" href="https://kernoid.dev">./docs</a>
@@ -80,17 +81,57 @@
       </div>
     </section>
 
+    <section id="apps">
+      <div class="wrap">
+        <h2>apps</h2>
+        <p>The app for desktop and mobile – mail with end-to-end encryption, calendars, contacts and files – as a
+          preview to try with a kernoid of the same version. It signs in through kernoid's login page in your browser.
+          The builds are <strong>not signed</strong> yet: your system warns before it opens them. The web app and the
+          terminal app come with the server.</p>
+
+        <div class="release" data-release hidden>
+          <p class="release-head"><strong>kernoid apps <span data-version></span></strong> <span class="badge">preview</span> <span class="badge warn">unsigned</span>
+            <a data-page href="#">release notes</a></p>
+          <div class="downloads" data-downloads></div>
+        </div>
+        <div class="release" data-pending>
+          <p class="release-head"><strong>The first builds are on their way.</strong></p>
+          <p class="note">Until then: build the app yourself from <a href="https://github.com/kernoid/apps">kernoid/apps</a>.</p>
+        </div>
+
+        <div class="grid install">
+          <div class="cell"><h3>macOS</h3><p>macOS blocks an unsigned app from the browser. Either open the zip,
+            move <b>kernoid</b> to Applications, open it once, then <em>System Settings → Privacy &amp; Security → Open
+            Anyway</em> – or fetch it in the Terminal, which is not blocked:</p>
+            <pre class="snippet"><code data-install="macos">curl -fLO &lt;download URL&gt;
+shasum -a 256 -c &lt;file&gt;.sha256
+ditto -x -k &lt;file&gt; /Applications</code></pre></div>
+          <div class="cell"><h3>Windows</h3><p>Unpack the zip anywhere and start <b>kernoid.exe</b>. SmartScreen
+            warns about an unknown publisher: <em>More info → Run anyway</em>.</p></div>
+          <div class="cell"><h3>Linux</h3><p>Unpack and start <b>kernoid</b> in the folder. It needs GTK 3,
+            libsecret and WebKitGTK 4.1 – on Debian and Ubuntu:</p>
+            <pre class="snippet"><code>sudo apt install libgtk-3-0 libsecret-1-0 libwebkit2gtk-4.1-0</code></pre></div>
+          <div class="cell"><h3>Android</h3><p>Open the APK and allow installing from your browser. It is signed
+            with a throwaway key: to update, remove the app first. For phones with a 64-bit ARM processor.</p></div>
+          <div class="cell"><h3>iOS</h3><p>An iPhone installs only signed apps – iOS comes with the App Store, once
+            falkOSS holds the developer account.</p></div>
+        </div>
+        <p class="note">Check a download against its <code>.sha256</code> file. Source, issues and the changelog:
+          <a href="https://github.com/kernoid/apps">kernoid/apps</a> (MIT).</p>
+      </div>
+    </section>
+
     <section id="roadmap">
       <div class="wrap">
         <h2>roadmap</h2>
         <p>kernoid is in its pre-release phase: <a href="https://kernoid.dev/getting-started/">install it</a> and tell us what you find – there has been no external security audit yet. The aim is a first stable release ready for production and running falkOSS's own email, logins and files – together with the app for desktop and mobile, once falkOSS is incorporated and holds the app stores' developer accounts.</p>
         <ol class="steps">
-          <li><span class="name">0.1</span><span class="when">released</span><span class="what">identity and single sign-on – OpenID Connect, SAML, SCIM, passkeys; mail – SMTP, IMAP, JMAP; calendars and contacts; files with WebDAV and team folders; the web app and a terminal app</span></li>
-          <li class="now"><span class="name">0.2</span><span class="when">in the works</span><span class="what">public links and drop boxes, uploads in pieces, LDAP, a Kubernetes operator with a Helm chart, end-to-end encryption, the core completed – and the first modules: virus scanning and video calls (Jitsi); most of it is in the repository already</span></li>
+          <li><span class="name">0.1</span><span class="when">released 2026-10-28</span><span class="what">identity and single sign-on – OpenID Connect, SAML, SCIM, passkeys; mail – SMTP, IMAP, JMAP; calendars and contacts; files with WebDAV and team folders; the web app and a terminal app</span></li>
+          <li class="now"><span class="name">0.2</span><span class="when">released DATE</span><span class="what">public links and drop boxes, uploads in pieces, LDAP, a Kubernetes operator with a Helm chart, end-to-end encryption with post-quantum keys, the core completed – the first modules: virus scanning and video calls (Jitsi) – and a preview of the app for desktop and mobile; the Rust SDK on crates.io</span></li>
           <li><span class="name">0.x</span><span class="when">until stable</span><span class="what">office editing (WOPI), external key management, DNS automation, help with moving in, hooks for other systems, an external security audit</span></li>
           <li><span class="name">1.0</span><span class="when">with falkOSS incorporated</span><span class="what">stable – ready for production, with the app for desktop and mobile (macOS, iOS, Linux, Android, Windows)</span></li>
         </ol>
-        <p class="note">The web app and the terminal app are kernoid's own apps until then, and the app for desktop and mobile is built alongside; mail programs, calendars and file managers connect over the open protocols. Details in the <a href="https://github.com/kernoid/kernoid/blob/main/CHANGELOG.md">changelog</a> and the <a href="https://github.com/kernoid/whitepaper">whitepaper</a>.</p>
+        <p class="note">Until then the web app and the terminal app are kernoid's own apps, and the app for desktop and mobile comes as an <a href="#apps">unsigned preview</a> with each release; mail programs, calendars and file managers connect over the open protocols. Details in the <a href="https://github.com/kernoid/kernoid/blob/main/CHANGELOG.md">changelog</a> and the <a href="https://github.com/kernoid/whitepaper">whitepaper</a>.</p>
       </div>
     </section>
 
@@ -126,5 +167,6 @@ kern<b>oid</b>, OIDC       → <i>OpenID Connect</i></pre>
       <span><a href="https://falkoss.org/impressum.html">impressum</a> · <a href="https://falkoss.org/datenschutz.html">datenschutz</a></span>
     </div>
   </footer>
+  <script src="download.js" defer></script>
 </body>
 </html>

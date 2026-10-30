@@ -120,3 +120,19 @@ footer a:hover { color: var(--white); }
   nav { display: none; }
   .steps li { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* apps: downloads from apps.json, how to open unsigned builds */
+.release { border: 1px solid var(--line); background: var(--panel); padding: 20px 22px; margin: 0 0 24px; }
+.release-head { margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.release-head strong { font: 700 15px var(--mono); }
+.release > .note { margin: 0; }
+.badge { font: 12px var(--mono); padding: 2px 8px; border: 1px solid var(--mint); color: var(--mint); }
+.badge.warn { border-color: var(--white); color: var(--white); }
+.downloads { display: grid; gap: 10px; }
+.download { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
+.download .button { width: 17em; max-width: 100%; text-align: center; }
+.download .sum { font: 12px var(--mono); color: var(--steel); overflow-wrap: anywhere; min-width: 0; flex: 1 1 20em; }
+.install .cell p + p, .install .cell pre { margin-top: 12px; }
+.install em { color: var(--white); font-style: normal; }
+pre.snippet { margin: 12px 0 0; padding: 12px 14px; background: var(--night); border: 1px solid var(--line); overflow-x: auto; }
+pre.snippet code { font: 13px/1.6 var(--mono); color: var(--reed); white-space: pre; }
