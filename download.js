@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Fills the apps' downloads from apps.json – the feed the release workflow of kernoid/apps writes, copied here once a
-// release is published. No feed yet: the "on their way" note stays.
+// Fills the apps' downloads from apps.json – the feed the release workflow of kernoid/apps writes, which the site's
+// publishing takes from the newest published release (pages.yml). No feed yet: the "on their way" note stays.
 (async () => {
   let feed;
   try {

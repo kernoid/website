@@ -19,8 +19,11 @@ python3 -m http.server 8012
 
 ## Publishing
 
-GitHub Pages via `.github/workflows/pages.yml` on every push to `main`. One-time setup: Repo → Settings → Pages →
-Source: **GitHub Actions**.
+GitHub Pages via `.github/workflows/pages.yml` on every push to `main`, once a day and by hand (Actions → pages → Run
+workflow). Each run takes the newest releases: kernoid's version from its newest tag `v*` into the status line, and
+the apps' downloads – `apps.json` of the newest *published* release of kernoid/apps (a draft is not public). So a
+release needs no change here; run the workflow by hand to show one at once. `apps.json` in this repository is only
+the fallback when no feed is found. One-time setup: Repo → Settings → Pages → Source: **GitHub Actions**.
 
 **OPEN:** the domain. Once it is registered: set it as custom domain, **Enforce HTTPS**, and add `canonical`,
 `og:url` and an absolute `og:image` to `index.html` and `Canonical:` to `.well-known/security.txt`. Until then,

@@ -1,12 +1,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Publish the static site to GitHub Pages on every push to main.
-# Only the public files go into the artifact (no workflow, no README, no LICENSE). Actions are pinned by commit, with
-# the version as a comment.
+# Publish the static site to GitHub Pages on every push to main, once a day and by hand – each time with the newest
+# releases: kernoid's version (its newest tag `v*`) in the status line, and the apps' downloads (`apps.json` of the
+# newest published release of kernoid/apps). Nothing is fetched in the visitor's browser. Only the public files go into
+# the artifact (no workflow, no README, no LICENSE). Actions are pinned by commit, with the version as a comment.
 name: pages
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "17 5 * * *"
   workflow_dispatch:
 
 permissions:
@@ -32,6 +35,24 @@ jobs:
           cp -r index.html 404.html style.css robots.txt favicon.ico favicon.svg apple-touch-icon.png \
             icon-192.png icon-512.png site.webmanifest social.png download.js apps.json assets .well-known _site/
           touch _site/.nojekyll
+      - name: The newest releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # kernoid: the newest version tag. Kept as it is in index.html when none is found.
+          version=$(git ls-remote --tags --refs https://github.com/kernoid/kernoid 'v*' \
+            | sed -n 's|.*refs/tags/v\([0-9][0-9.]*\)$|\1|p' | sort -V | tail -n 1)
+          if [ -n "$version" ]; then
+            sed -i "s|<span data-kernoid-version>[^<]*</span>|<span data-kernoid-version>$version</span>|" _site/index.html
+          fi
+          grep -o '<span data-kernoid-version>[^<]*</span>' _site/index.html
+          # The apps: apps.json of their newest published release (drafts are not public); else the one in this repository.
+          tag=$(gh api repos/kernoid/apps/releases --jq '[.[] | select(.draft | not)][0].tag_name' || true)
+          if [ -n "$tag" ] && gh release download "$tag" --repo kernoid/apps --pattern apps.json --dir /tmp/feed --clobber \
+              && jq -e '.version and (.files | length > 0)' /tmp/feed/apps.json >/dev/null; then
+            cp /tmp/feed/apps.json _site/apps.json
+          fi
+          jq -r '"apps " + .version' _site/apps.json
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
