@@ -128,8 +128,12 @@ section > .wrap > p.release-bar, .release-bar { max-width: none; display: flex; 
 .release-bar a { margin-left: auto; }
 .badge { font: 12px var(--mono); padding: 2px 8px; border: 1px solid var(--mint); color: var(--mint); }
 .badge.warn { border-color: var(--white); color: var(--white); }
-.platforms { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.platform { grid-column: span 2; background: var(--panel); padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+/* Each card on its own and as high as its content: opening one grows only that card (as omaflake's catalog) */
+.platforms { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: start; }
+.platform { grid-column: span 2; background: var(--panel); border: 1px solid var(--line); padding: 22px;
+  display: flex; flex-direction: column; gap: 16px; min-width: 0; transition: border-color 0.15s; }
+.platform:hover { border-color: var(--steel); }
+.platform:has(details[open]) { border-color: var(--mint); }
 .platform.mobile { grid-column: span 3; }
 .platform-head { display: flex; align-items: center; gap: 12px; }
 .platform-head h3 { margin: 0; font: 700 17px var(--mono); color: var(--white); }
@@ -140,7 +144,7 @@ section > .wrap > p.release-bar, .release-bar { max-width: none; display: flex; 
 .specs div + div { border-left: 1px solid var(--line); }
 .specs dt { font: 11px var(--mono); color: var(--steel); text-transform: uppercase; letter-spacing: .08em; }
 .specs dd { margin: 2px 0 0; font: 14px var(--mono); color: var(--white); }
-.get { display: grid; gap: 10px; margin-top: auto; }
+.get { display: grid; gap: 10px; }
 .get .button { display: block; text-align: center; }
 .get .soon { font: 13px var(--mono); color: var(--steel); padding: 10px 0; }
 .get .sum { display: block; margin-top: 4px; font: 11px var(--mono); color: var(--steel); overflow-wrap: anywhere; }
