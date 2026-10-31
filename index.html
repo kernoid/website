@@ -89,32 +89,63 @@
           The builds are <strong>not signed</strong> yet: your system warns before it opens them. The web app and the
           terminal app come with the server.</p>
 
-        <div class="release" data-release hidden>
-          <p class="release-head"><strong>kernoid apps <span data-version></span></strong> <span class="badge">preview</span> <span class="badge warn">unsigned</span>
-            <a data-page href="#">release notes</a></p>
-          <div class="downloads" data-downloads></div>
-        </div>
-        <div class="release" data-pending>
-          <p class="release-head"><strong>The first builds are on their way.</strong></p>
-          <p class="note">Until then: build the app yourself from <a href="https://github.com/kernoid/apps">kernoid/apps</a>.</p>
-        </div>
+        <p class="release-bar" data-release>
+          <span class="release-name">kernoid apps <strong data-version>–</strong></span>
+          <span class="badge">preview</span> <span class="badge warn">unsigned</span>
+          <a data-page href="https://github.com/kernoid/apps/releases">release notes →</a>
+        </p>
 
-        <div class="grid install">
-          <div class="cell"><h3>macOS</h3><p>macOS blocks an unsigned app from the browser. Either open the zip,
-            move <b>kernoid</b> to Applications, open it once, then <em>System Settings → Privacy &amp; Security → Open
-            Anyway</em> – or fetch it in the Terminal, which is not blocked:</p>
-            <pre class="snippet"><code data-install="macos">curl -fLO &lt;download URL&gt;
+        <div class="platforms">
+          <article class="platform">
+            <div class="platform-head"><span class="os-icon" style="--icon: url(assets/icons/apple.svg)"></span><h3>macOS</h3></div>
+            <dl class="specs"><div><dt>system</dt><dd>27 or later</dd></div><div><dt>processor</dt><dd>Apple silicon</dd></div></dl>
+            <div class="get" data-get="macos"><span class="soon">build pending</span></div>
+            <details><summary>how to open</summary>
+              <p>macOS blocks an unsigned app from the browser. Open the zip, move <b>kernoid</b> to Applications, open
+                it once, then <em>System Settings → Privacy &amp; Security → Open Anyway</em> – or fetch it in the
+                Terminal, which is not blocked:</p>
+              <pre class="snippet"><code data-install="macos">curl -fLO &lt;download URL&gt;
 shasum -a 256 -c &lt;file&gt;.sha256
-ditto -x -k &lt;file&gt; /Applications</code></pre></div>
-          <div class="cell"><h3>Windows</h3><p>Unpack the zip anywhere and start <b>kernoid.exe</b>. SmartScreen
-            warns about an unknown publisher: <em>More info → Run anyway</em>.</p></div>
-          <div class="cell"><h3>Linux</h3><p>Unpack and start <b>kernoid</b> in the folder. It needs GTK 3,
-            libsecret and WebKitGTK 4.1 – on Debian and Ubuntu:</p>
-            <pre class="snippet"><code>sudo apt install libgtk-3-0 libsecret-1-0 libwebkit2gtk-4.1-0</code></pre></div>
-          <div class="cell mobile"><h3>Android</h3><p>Open the APK and allow installing from your browser. It is signed
-            with a throwaway key: to update, remove the app first. For phones with a 64-bit ARM processor.</p></div>
-          <div class="cell mobile"><h3>iOS</h3><p>An iPhone installs only signed apps – iOS comes with the App Store, once
-            falkOSS holds the developer account.</p></div>
+ditto -x -k &lt;file&gt; /Applications</code></pre>
+            </details>
+          </article>
+          <article class="platform">
+            <div class="platform-head"><span class="os-icon" style="--icon: url(assets/icons/windows.svg)"></span><h3>Windows</h3></div>
+            <dl class="specs"><div><dt>system</dt><dd>11 or later</dd></div><div><dt>processor</dt><dd>x64</dd></div></dl>
+            <div class="get" data-get="windows"><span class="soon">build pending</span></div>
+            <details><summary>how to open</summary>
+              <p>Unpack the zip anywhere and start <b>kernoid.exe</b>. SmartScreen warns about an unknown publisher:
+                <em>More info → Run anyway</em>.</p>
+            </details>
+          </article>
+          <article class="platform">
+            <div class="platform-head"><span class="os-icon" style="--icon: url(assets/icons/linux.svg)"></span><h3>Linux</h3></div>
+            <dl class="specs"><div><dt>system</dt><dd>GTK 3, WebKitGTK 4.1</dd></div><div><dt>processor</dt><dd>x64 · arm64</dd></div></dl>
+            <div class="get" data-get="linux-x64 linux-arm64"><span class="soon">build pending</span></div>
+            <details><summary>how to open</summary>
+              <p>Unpack and start <b>kernoid</b> in the folder. It needs GTK 3, libsecret and WebKitGTK 4.1 – on Debian
+                and Ubuntu:</p>
+              <pre class="snippet"><code>sudo apt install libgtk-3-0 libsecret-1-0 libwebkit2gtk-4.1-0</code></pre>
+            </details>
+          </article>
+          <article class="platform mobile">
+            <div class="platform-head"><span class="os-icon" style="--icon: url(assets/icons/android.svg)"></span><h3>Android</h3></div>
+            <dl class="specs"><div><dt>system</dt><dd>13 or later</dd></div><div><dt>processor</dt><dd>arm64</dd></div></dl>
+            <div class="get" data-get="android"><span class="soon">build pending</span></div>
+            <details><summary>how to open</summary>
+              <p>Open the APK and allow installing from your browser. It is signed with a throwaway key: to update,
+                remove the app first.</p>
+            </details>
+          </article>
+          <article class="platform mobile">
+            <div class="platform-head"><span class="os-icon" style="--icon: url(assets/icons/apple.svg)"></span><h3>iOS · iPadOS</h3></div>
+            <dl class="specs"><div><dt>system</dt><dd>27 or later</dd></div><div><dt>processor</dt><dd>arm64</dd></div></dl>
+            <div class="get"><span class="soon">App Store – with falkOSS's developer account</span></div>
+            <details><summary>why not yet</summary>
+              <p>An iPhone or iPad installs only signed apps, so iOS comes with the App Store once falkOSS holds the
+                developer account.</p>
+            </details>
+          </article>
         </div>
         <p class="note">Check a download against its <code>.sha256</code> file. Source, issues and the changelog:
           <a href="https://github.com/kernoid/apps">kernoid/apps</a> (MIT).</p>

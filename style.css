@@ -121,24 +121,42 @@ footer a:hover { color: var(--white); }
   .steps li { grid-template-columns: 1fr; gap: 4px; }
 }
 
-/* apps: downloads from apps.json, how to open unsigned builds */
-.release { border: 1px solid var(--line); background: var(--panel); padding: 20px 22px; margin: 0 0 24px; }
-.release-head { margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.release-head strong { font: 700 15px var(--mono); }
-.release > .note { margin: 0; }
+/* apps: one card per system – what it needs, its downloads from apps.json, how to open the unsigned build */
+section > .wrap > p.release-bar, .release-bar { max-width: none; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 0 0 18px; font: 14px var(--mono); }
+.release-name { color: var(--reed); }
+.release-name strong { color: var(--white); }
+.release-bar a { margin-left: auto; }
 .badge { font: 12px var(--mono); padding: 2px 8px; border: 1px solid var(--mint); color: var(--mint); }
 .badge.warn { border-color: var(--white); color: var(--white); }
-.downloads { display: grid; gap: 10px; }
-.download { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
-.download .button { width: 17em; max-width: 100%; text-align: center; }
-.download .sum { font: 12px var(--mono); color: var(--steel); overflow-wrap: anywhere; min-width: 0; flex: 1 1 20em; }
-.install .cell p + p, .install .cell pre { margin-top: 12px; }
-/* the three desktop systems in a row, the two mobile ones below them – on screens wide enough for three columns */
-@media (min-width: 761px) {
-  .grid.install { grid-template-columns: repeat(6, 1fr); }
-  .grid.install .cell { grid-column: span 2; }
-  .grid.install .cell.mobile { grid-column: span 3; }
+.platforms { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.platform { grid-column: span 2; background: var(--panel); padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.platform.mobile { grid-column: span 3; }
+.platform-head { display: flex; align-items: center; gap: 12px; }
+.platform-head h3 { margin: 0; font: 700 17px var(--mono); color: var(--white); }
+.os-icon { flex: none; width: 30px; height: 30px; background: var(--mint);
+  -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
+.specs { margin: 0; display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); }
+.specs div { padding: 8px 12px; min-width: 0; }
+.specs div + div { border-left: 1px solid var(--line); }
+.specs dt { font: 11px var(--mono); color: var(--steel); text-transform: uppercase; letter-spacing: .08em; }
+.specs dd { margin: 2px 0 0; font: 14px var(--mono); color: var(--white); }
+.get { display: grid; gap: 10px; margin-top: auto; }
+.get .button { display: block; text-align: center; }
+.get .soon { font: 13px var(--mono); color: var(--steel); padding: 10px 0; }
+.get .sum { display: block; margin-top: 4px; font: 11px var(--mono); color: var(--steel); overflow-wrap: anywhere; }
+.platform details { border-top: 1px solid var(--line); padding-top: 12px; }
+.platform summary { cursor: pointer; font: 13px var(--mono); color: var(--reed); }
+.platform summary:hover { color: var(--mint); }
+.platform details p { margin: 12px 0 0; color: var(--reed); font-size: 14px; }
+.platform em { color: var(--white); font-style: normal; }
+@media (max-width: 900px) {
+  .platforms { grid-template-columns: 1fr 1fr; }
+  .platform, .platform.mobile { grid-column: span 1; }
+  .platform:last-child { grid-column: span 2; }
 }
-.install em { color: var(--white); font-style: normal; }
+@media (max-width: 560px) {
+  .platforms { grid-template-columns: 1fr; }
+  .platform:last-child { grid-column: span 1; }
+}
 pre.snippet { margin: 12px 0 0; padding: 12px 14px; background: var(--night); border: 1px solid var(--line); overflow-x: auto; }
 pre.snippet code { font: 13px/1.6 var(--mono); color: var(--reed); white-space: pre; }
