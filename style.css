@@ -133,6 +133,12 @@ footer a:hover { color: var(--white); }
 .download .button { width: 17em; max-width: 100%; text-align: center; }
 .download .sum { font: 12px var(--mono); color: var(--steel); overflow-wrap: anywhere; min-width: 0; flex: 1 1 20em; }
 .install .cell p + p, .install .cell pre { margin-top: 12px; }
+/* the three desktop systems in a row, the two mobile ones below them – on screens wide enough for three columns */
+@media (min-width: 761px) {
+  .grid.install { grid-template-columns: repeat(6, 1fr); }
+  .grid.install .cell { grid-column: span 2; }
+  .grid.install .cell.mobile { grid-column: span 3; }
+}
 .install em { color: var(--white); font-style: normal; }
 pre.snippet { margin: 12px 0 0; padding: 12px 14px; background: var(--night); border: 1px solid var(--line); overflow-x: auto; }
 pre.snippet code { font: 13px/1.6 var(--mono); color: var(--reed); white-space: pre; }
