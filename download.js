@@ -11,7 +11,7 @@
   if (!feed || !feed.version || !Array.isArray(feed.files) || !feed.files.length) return;
 
   const names = {
-    macos: 'macOS · Apple silicon and Intel',
+    macos: 'macOS · Apple silicon',
     windows: 'Windows · x64',
     'linux-x64': 'Linux · x64',
     'linux-arm64': 'Linux · arm64',
