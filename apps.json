@@ -1,36 +1,36 @@
 {
-  "version": "0.2.0",
-  "page": "https://github.com/kernoid/apps/releases/tag/v0.2.0",
+  "version": "0.6.0",
+  "page": "https://github.com/kernoid/apps/releases/tag/v0.6.0",
   "signed": false,
   "files": [
     {
-      "sha256": "f23e32475c8ff5d8f64366a9bb2a75bbba38bafe01190cb9502e7c0f10a89909",
-      "name": "kernoid-0.2.0-android.apk",
-      "url": "https://github.com/kernoid/apps/releases/download/v0.2.0/kernoid-0.2.0-android.apk",
+      "sha256": "f693095a671d411d715c58953320449f0796855edab9e9dd5338f81cf1196935",
+      "name": "kernoid-0.6.0-android.apk",
+      "url": "https://github.com/kernoid/apps/releases/download/v0.6.0/kernoid-0.6.0-android.apk",
       "platform": "android"
     },
     {
-      "sha256": "53c1d2138aa15d71aa6b34b1f4a853cb8d59b32741a09933a5fd90d366ad5760",
-      "name": "kernoid-0.2.0-linux-arm64.tar.gz",
-      "url": "https://github.com/kernoid/apps/releases/download/v0.2.0/kernoid-0.2.0-linux-arm64.tar.gz",
+      "sha256": "7ec55fdc832f9e17cf7188d0cbfb0dd4d243b51626b1709d3a12342e3cf69377",
+      "name": "kernoid-0.6.0-linux-arm64.tar.gz",
+      "url": "https://github.com/kernoid/apps/releases/download/v0.6.0/kernoid-0.6.0-linux-arm64.tar.gz",
       "platform": "linux-arm64"
     },
     {
-      "sha256": "4bae21432f9cc6e598703f609b9f275de58317199244a2227c3fe407f3a40175",
-      "name": "kernoid-0.2.0-linux-x64.tar.gz",
-      "url": "https://github.com/kernoid/apps/releases/download/v0.2.0/kernoid-0.2.0-linux-x64.tar.gz",
+      "sha256": "188323544d3064479c8bf0d08509c0aef0e5f4647075ac3c4eb81a99e9190f77",
+      "name": "kernoid-0.6.0-linux-x64.tar.gz",
+      "url": "https://github.com/kernoid/apps/releases/download/v0.6.0/kernoid-0.6.0-linux-x64.tar.gz",
       "platform": "linux-x64"
     },
     {
-      "sha256": "f3bc30e005b70a272db9c27f04551fb363f047847fbae07638921fb3205382ea",
-      "name": "kernoid-0.2.0-macos.zip",
-      "url": "https://github.com/kernoid/apps/releases/download/v0.2.0/kernoid-0.2.0-macos.zip",
+      "sha256": "5138d742d17b8b47bda272b00cc79c89835897fb90fafb2714756a689483b09c",
+      "name": "kernoid-0.6.0-macos.zip",
+      "url": "https://github.com/kernoid/apps/releases/download/v0.6.0/kernoid-0.6.0-macos.zip",
       "platform": "macos"
     },
     {
-      "sha256": "98d906b345912f480bb371734a85144ccadfdfc060bfa0a7b4b33a831a6c5ae5",
-      "name": "kernoid-0.2.0-windows.zip",
-      "url": "https://github.com/kernoid/apps/releases/download/v0.2.0/kernoid-0.2.0-windows.zip",
+      "sha256": "7d0a964d3b1e1bf0c041a0e0bff9c9378be4dfb7eeaf1190ce68b8b7096faa25",
+      "name": "kernoid-0.6.0-windows.zip",
+      "url": "https://github.com/kernoid/apps/releases/download/v0.6.0/kernoid-0.6.0-windows.zip",
       "platform": "windows"
     }
   ]

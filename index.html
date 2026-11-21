@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>kernoid – one core for email, identity and storage</title>
-  <meta name="description" content="kernoid is free software in Rust: one self-hostable system for email, identity and storage. A falkOSS project, in early development.">
+  <meta name="description" content="kernoid is free software in Rust: one self-hostable system for email, identity and storage. A falkOSS project, in its pre-release phase.">
   <meta name="theme-color" content="#0B0D10">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="kernoid">
@@ -44,7 +44,7 @@
           <p><strong>kernoid</strong> is one self-hostable system for an organisation's core: an account is created
             once and can be at the same time the mailbox, the login for single sign-on and the owner of files. Free
             software in Rust – everything included.</p>
-          <p class="status"><span data-kernoid-version>0.2.0</span> – a pre-release, to try out and test</p>
+          <p class="status"><span data-kernoid-version>0.6.0</span> – a pre-release, to try out and test</p>
           <div class="buttons">
             <a class="button primary" href="https://kernoid.dev/getting-started/">./get-started</a>
             <a class="button" href="https://kernoid.dev">./docs</a>
@@ -73,10 +73,10 @@
       <div class="wrap">
         <h2>how it is built</h2>
         <div class="grid">
-          <div class="cell"><h3>open standards</h3><p>SMTP, IMAP, JMAP, CalDAV, CardDAV, WebDAV; OpenID Connect, OAuth 2.0, SAML 2.0, SCIM 2.0 – LDAP with 0.2. The same protocols take your data out again.</p></div>
-          <div class="cell"><h3>on proven work</h3><p>kernoid takes over AGPL code from <a href="https://github.com/stalwartlabs/stalwart">Stalwart</a> and carries the concepts of <a href="https://github.com/zitadel/zitadel">Zitadel</a> over to Rust – credited in every file.</p></div>
+          <div class="cell"><h3>open standards</h3><p>SMTP, IMAP, JMAP, CalDAV, CardDAV, WebDAV; OpenID Connect, OAuth 2.0, SAML 2.0, SCIM 2.0 and LDAP. The same protocols take your data out again.</p></div>
+          <div class="cell"><h3>its own code</h3><p>kernoid learned from <a href="https://github.com/stalwartlabs/stalwart">Stalwart</a> and <a href="https://github.com/zitadel/zitadel">Zitadel</a>; since 0.6 every line is its own, written from the RFCs – credited in <a href="https://github.com/kernoid/kernoid/blob/main/CREDITS.md">CREDITS.md</a>. Its building blocks are on <a href="https://crates.io/crates/kernoid-server">crates.io</a>.</p></div>
           <div class="cell"><h3>modules, not bloat</h3><p>Connections to other services – video, office editing and more – are modules: off by default, switched on where they are needed.</p></div>
-          <div class="cell"><h3>apps under MIT</h3><p>The server is AGPL-3.0; first-party apps are MIT and speak an open protocol. Anyone can write their own.</p></div>
+          <div class="cell"><h3>apps under MIT</h3><p>The server, the web app and the terminal app are AGPL-3.0; the app for desktop and mobile and the kit it is built from are MIT and speak an open protocol. Anyone can write their own.</p></div>
         </div>
       </div>
     </section>
